@@ -12,3 +12,57 @@ else
         nav_state = "close"
    }
 })
+
+const blog_pages = 3
+let i = 1
+
+document.querySelectorAll(".paginator i").forEach(element => {
+   element.addEventListener("click", paginator)
+})
+document.querySelectorAll(".paginator a").forEach(element => {
+   element.addEventListener("click", setIndex)
+})
+
+function setIndex()
+{
+   document.querySelector(".paginator a:nth-child(" + (i+1) + ")").classList.remove("active")
+   i = Array.from(this.parentElement.children).indexOf(this)
+   document.querySelector(".paginator a:nth-child(" + (i+1) + ")").classList.add("active")
+}
+
+function paginator()
+{
+   document.querySelector(".paginator a:nth-child(" + (i+1) + ")").classList.remove("active")
+   if(this.id == "next-page")
+   {
+      i = (i == blog_pages) ? 1 : (i+1)
+      window.location.href = "#blogs" + i
+   }
+   else
+   {
+      i =  (i == 1) ? blog_pages : (i-1)
+      window.location.href = "#blogs" + i
+   }
+   document.querySelector(".paginator a:nth-child(" + (i+1) + ")").classList.add("active")
+}
+
+document.querySelector(".blogs").addEventListener("scroll", hello)
+
+function hello(e)
+{
+   scroll_pos = e.target.scrollLeft
+   if(scroll_pos % 1000 == 0)
+   {
+      document.querySelector(".paginator a:nth-child(" + (i+1) + ")").classList.remove("active")
+      if(scroll_pos == 0)
+      {
+         i = 1
+      }
+      else
+      {
+         i = scroll_pos / 1000 + 1
+      }
+      console.log(i)
+      document.querySelector(".paginator a:nth-child(" + (i+1) + ")").classList.add("active")
+   }
+}

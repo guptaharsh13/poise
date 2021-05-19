@@ -35,6 +35,7 @@ nav {
   position: sticky;
   top: 0;
   left: 0;
+  z-index: 1;
   background-color: white;
   display: -ms-grid;
   display: grid;
@@ -293,63 +294,154 @@ nav .hamburger {
   }
 }
 
+#blog1 {
+  background: url("../images/blog1.jpg") no-repeat center center/cover;
+}
+
+#blog2 {
+  background: url("../images/blog2.jpg") no-repeat center center/cover;
+}
+
+#blog3 {
+  background: url("../images/blog3.jpg") no-repeat center center/cover;
+}
+
+#blog4 {
+  background: url("../images/blog4.jpg") no-repeat center center/cover;
+}
+
 .blogs {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (100%)[3];
+      grid-template-columns: repeat(3, 100%);
+  -ms-grid-rows: 1fr;
+      grid-template-rows: 1fr;
+  overflow-x: scroll;
+  -ms-scroll-snap-type: x mandatory;
+      scroll-snap-type: x mandatory;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.blogs::-webkit-scrollbar {
+  display: none;
+}
+
+.blogs .blogs-container {
+  scroll-snap-align: start;
+  padding: 5rem;
+  display: -ms-grid;
+  display: grid;
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  -ms-grid-columns: (minmax(320px, 420px))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(320px, 420px));
+  grid-gap: 1rem;
 }
 
-.blogs .blog-card {
-  width: 420px;
-  height: 850px;
-  margin: 1rem;
-  border: 1px solid black;
+.blogs .blogs-container .blog-card {
+  height: 750px;
+  color: black;
+  border: 1px solid darkgray;
+  border-top: none;
 }
 
-.blogs .blog-card .card-img {
-  height: 65%;
-  background: url("../images/blog1.jpg") no-repeat center center/cover;
+.blogs .blogs-container .blog-card:hover, .blogs .blogs-container .blog-card:focus {
+  color: white;
+  background-color: black;
 }
 
-.blogs .blog-card .card-body {
-  height: 35%;
+.blogs .blogs-container .blog-card .card-img {
+  height: 60%;
+}
+
+.blogs .blogs-container .blog-card .card-body {
+  height: 40%;
   padding: 1rem;
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: 1fr 1fr 4fr auto 2fr;
-      grid-template-rows: 1fr 1fr 4fr auto 2fr;
+  -ms-grid-rows: 1fr 1fr auto 4fr 1px 2fr;
+      grid-template-rows: 1fr 1fr auto 4fr 1px 2fr;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
-.blogs .blog-card .card-body .author, .blogs .blog-card .card-body .date {
+.blogs .blogs-container .blog-card .card-body .author, .blogs .blogs-container .blog-card .card-body .date {
   font-size: 14px;
 }
 
-.blogs .blog-card .card-body .date {
+.blogs .blogs-container .blog-card .card-body .date, .blogs .blogs-container .blog-card .card-body .content, .blogs .blogs-container .blog-card .card-body .views {
   color: gray;
 }
 
-.blogs .blog-card .card-body h1 {
+.blogs .blogs-container .blog-card .card-body h1 {
   font-size: 2rem;
   text-transform: uppercase;
+  margin: .75rem 0;
+  max-height: 4.5rem;
+  overflow-y: hidden;
 }
 
-.blogs .blog-card .card-body .content {
-  color: gray;
+.blogs .blogs-container .blog-card .card-body .content {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  max-height: 4.75rem;
+  overflow-y: hidden;
 }
 
-.blogs .blog-card .card-body .views {
-  border-top: 1px solid gray;
-  color: gray;
+.blogs .blogs-container .blog-card .card-body .line {
+  background-color: gray;
+  height: 100%;
+}
+
+@media screen and (max-width: 1050px) {
+  .blogs-container {
+    padding: 0;
+  }
+  .blogs-container .blog-card {
+    border: none;
+    border-color: non;
+  }
+}
+
+.paginator {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.25rem;
+}
+
+.paginator i {
+  font-size: 12px;
+}
+
+.paginator i, .paginator a {
+  cursor: pointer;
+  margin: 1rem;
+  padding: 7.5px;
+  color: dimgray;
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+}
+
+.paginator i:hover, .paginator i:focus, .paginator a:hover, .paginator a:focus {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.paginator a.active {
+  background-color: rgba(0, 0, 0, 0.1);
 }
 /*# sourceMappingURL=style.css.map */
