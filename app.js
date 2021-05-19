@@ -45,24 +45,3 @@ function paginator()
    }
    document.querySelector(".paginator a:nth-child(" + (i+1) + ")").classList.add("active")
 }
-
-document.querySelector(".blogs").addEventListener("scroll", hello)
-
-function hello(e)
-{
-   scroll_pos = e.target.scrollLeft
-   if(scroll_pos % 1000 == 0)
-   {
-      document.querySelector(".paginator a:nth-child(" + (i+1) + ")").classList.remove("active")
-      if(scroll_pos == 0)
-      {
-         i = 1
-      }
-      else
-      {
-         i = scroll_pos / 1000 + 1
-      }
-      console.log(i)
-      document.querySelector(".paginator a:nth-child(" + (i+1) + ")").classList.add("active")
-   }
-}

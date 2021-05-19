@@ -277,12 +277,34 @@ nav {
 #blog4 {
     background: url("../images/blog4.jpg") no-repeat center center/cover;
 }
+#blog5 {
+    background: url("../images/blog5.jpg") no-repeat center center/cover;
+}
+#blog6 {
+    background: url("../images/blog6.jpg") no-repeat center center/cover;
+}
+#blog7 {
+    background: url("../images/blog7.jpg") no-repeat center center/cover;
+}
+#blog8 {
+    background: url("../images/blog8.jpg") no-repeat center center/cover;
+}
+#blog9 {
+    background: url("../images/blog9.jpg") no-repeat center center/cover;
+}
+#blog10 {
+    background: url("../images/blog10.jpg") no-repeat center center/cover;
+}
+#blog11 {
+    background: url("../images/blog11.jpg") no-repeat center center/cover;
+}
 
 .blogs {
+    transform: translateX(0);
     display: grid;
     grid-template-columns: repeat(3, 100%);
     grid-template-rows: 1fr;
-    overflow-x: scroll;
+    overflow-x: hidden;
     scroll-snap-type: x mandatory;
     -ms-overflow-style: none;
     scrollbar-width: none;
@@ -298,6 +320,7 @@ nav {
         justify-content: space-evenly;
         align-items: center;
         grid-template-columns: repeat(auto-fill, minmax(320px, 420px));
+        height: fit-content;
         grid-gap: 1rem;
     
         .blog-card {
@@ -354,13 +377,11 @@ nav {
 }
 
 @media screen and (max-width: 1050px) {
-    .blogs-container {
+    .blogs .blogs-container {
         padding: 0;
-        
+
         .blog-card {
             border: none;
-            border-color: non
-            ;
         }
     }
 }
