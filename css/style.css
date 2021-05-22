@@ -213,6 +213,7 @@ nav .hamburger {
   }
   nav .nav-buttons a {
     font-family: "Play", sans-serif;
+    font-size: 1rem;
     text-transform: initial;
     padding: 0.75rem;
     margin: 5px;
@@ -453,7 +454,7 @@ nav .hamburger {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-size: 1.25rem;
+  font-size: 1rem;
 }
 
 .paginator i {
@@ -475,5 +476,161 @@ nav .hamburger {
 
 .paginator a.active {
   background-color: rgba(0, 0, 0, 0.1);
+}
+
+.about {
+  max-width: 1302px;
+  margin: auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(320px, 650px))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(320px, 650px));
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 1px solid black;
+}
+
+.about .about-img {
+  height: 650px;
+  background: url("../images/about_home.jpg") no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.about .about-content {
+  width: 60%;
+  margin: auto;
+  height: 650px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.about .about-content * {
+  margin: 0.85rem 0;
+}
+
+.about .about-content h1 {
+  font-size: 50px;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+.about .about-content p {
+  color: gray;
+  line-height: 1.75rem;
+}
+
+.about .about-content a {
+  font-family: "Play", sans-serif;
+  font-size: 1rem;
+  color: white;
+  background-color: black;
+  border: 1px solid black;
+  padding: 1rem;
+}
+
+.about .about-content a:hover, .about .about-content a:focus {
+  color: black;
+  background-color: transparent;
+}
+
+@media screen and (max-width: 590px) {
+  .about {
+    border: none;
+  }
+  .about .about-img {
+    background-attachment: fixed;
+  }
+  .about .about-content {
+    width: 85%;
+  }
+  .about .about-content h1, .about .about-content p {
+    text-align: center;
+  }
+  .about .about-content a {
+    margin: 0.85rem auto;
+  }
+}
+
+.heading {
+  font-size: 50px;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 2.65rem;
+  margin-top: 100px;
+  border: 1px solid black;
+}
+
+@media screen and (max-width: 590px) {
+  .heading {
+    font-size: 2rem;
+    padding: 2.65rem 0;
+    margin-top: 0;
+  }
+}
+
+#follow-card1 {
+  background: url("https://static.parastorage.com/services/instagram-cdn/1.691.0/assets/ig-templates-accounts/Editor/Fashion%20Blogger/01.jpg") no-repeat center center/cover;
+}
+
+#follow-card2 {
+  background: url("https://static.parastorage.com/services/instagram-cdn/1.691.0/assets/ig-templates-accounts/Editor/Fashion%20Blogger/02.jpg") no-repeat center center/cover;
+}
+
+#follow-card3 {
+  background: url("https://static.parastorage.com/services/instagram-cdn/1.691.0/assets/ig-templates-accounts/Editor/Fashion%20Blogger/03.jpg") no-repeat center center/cover;
+}
+
+#follow-card4 {
+  background: url("https://static.parastorage.com/services/instagram-cdn/1.691.0/assets/ig-templates-accounts/Editor/Fashion%20Blogger/04.jpg") no-repeat center center/cover;
+}
+
+#follow-card5 {
+  background: url("https://static.parastorage.com/services/instagram-cdn/1.691.0/assets/ig-templates-accounts/Editor/Fashion%20Blogger/05.jpg") no-repeat center center/cover;
+}
+
+#follow-card6 {
+  background: url("https://static.parastorage.com/services/instagram-cdn/1.691.0/assets/ig-templates-accounts/Editor/Fashion%20Blogger/06.jpg") no-repeat center center/cover;
+}
+
+#follow-card7 {
+  background: url("https://static.parastorage.com/services/instagram-cdn/1.691.0/assets/ig-templates-accounts/Editor/Fashion%20Blogger/07.jpg") no-repeat center center/cover;
+}
+
+#follow-card8 {
+  background: url("https://static.parastorage.com/services/instagram-cdn/1.691.0/assets/ig-templates-accounts/Editor/Fashion%20Blogger/08.jpg") no-repeat center center/cover;
+}
+
+.follow {
+  width: 100%;
+  overflow-x: scroll;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (13rem)[8];
+      grid-template-columns: repeat(8, 13rem);
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  grid-gap: 2rem;
+}
+
+.follow .card {
+  width: 13rem;
+  height: 13rem;
 }
 /*# sourceMappingURL=style.css.map */

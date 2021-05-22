@@ -1,12 +1,12 @@
 @import "variables";
 
-@mixin button($padding) {
+@mixin button() {
     font-family: $body-font;
-    font-size: 14px;
+    font-size: 1rem;
     color: white;
     background-color: black;
     border: 1px solid black;
-    padding: 1rem $padding;
+    padding: 1rem;
 
     &:hover, &:focus {
         color: black;
@@ -181,6 +181,7 @@ nav {
 
             a {
                 font-family: $body-font;
+                font-size: 1rem;
                 text-transform: initial;
                 padding: 0.75rem;
                 margin: 5px;
@@ -391,7 +392,7 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.25rem;
+    font-size: 1rem;
 
     i {
         font-size: 12px;
@@ -411,5 +412,126 @@ nav {
 
     a.active {
         background-color: rgba($color: #000000, $alpha: 0.1);
+    }
+}
+
+.about {
+    max-width: 1302px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 650px));
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+
+    .about-img {
+        height: 650px;
+        background: url("../images/about_home.jpg") no-repeat;
+        background-position: center;
+        background-size: cover;;
+    }
+
+    .about-content {
+        width: 60%;
+        margin: auto;
+        height: 650px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+
+        * {
+            margin: 0.85rem 0;
+        }
+
+        h1 {
+            font-size: 50px;
+            text-transform: uppercase;
+            width: 100%;
+        }
+
+        p {
+            color: gray;
+            line-height: 1.75rem;
+        }
+
+        a {
+            @include button();
+        }
+    }
+}
+
+@media screen and (max-width: 590px) {
+    .about
+    {
+        border: none;
+
+        .about-img {
+            background-attachment: fixed;
+        }
+
+        .about-content {
+            width: 85%;
+            h1, p {
+                text-align: center;
+            }
+            a {
+                margin: 0.85rem auto;
+            }
+        }
+    }
+}
+
+.heading {
+    font-size: 50px;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 2.65rem;
+    margin-top: 100px;
+    border: 1px solid black;
+
+    @media screen and (max-width: 590px) {
+        font-size: 2rem;
+        padding: 2.65rem 0;
+        margin-top: 0;
+    }
+}
+
+#follow-card1 {
+    background: url("https://static.parastorage.com/services/instagram-cdn/1.691.0/assets/ig-templates-accounts/Editor/Fashion%20Blogger/01.jpg") no-repeat center center/cover;
+}
+#follow-card2 {
+    background: url("https://static.parastorage.com/services/instagram-cdn/1.691.0/assets/ig-templates-accounts/Editor/Fashion%20Blogger/02.jpg") no-repeat center center/cover;
+}
+#follow-card3 {
+    background: url("https://static.parastorage.com/services/instagram-cdn/1.691.0/assets/ig-templates-accounts/Editor/Fashion%20Blogger/03.jpg") no-repeat center center/cover;
+}
+#follow-card4 {
+    background: url("https://static.parastorage.com/services/instagram-cdn/1.691.0/assets/ig-templates-accounts/Editor/Fashion%20Blogger/04.jpg") no-repeat center center/cover;
+}
+#follow-card5 {
+    background: url("https://static.parastorage.com/services/instagram-cdn/1.691.0/assets/ig-templates-accounts/Editor/Fashion%20Blogger/05.jpg") no-repeat center center/cover;
+}
+#follow-card6 {
+    background: url("https://static.parastorage.com/services/instagram-cdn/1.691.0/assets/ig-templates-accounts/Editor/Fashion%20Blogger/06.jpg") no-repeat center center/cover;
+}
+#follow-card7 {
+    background: url("https://static.parastorage.com/services/instagram-cdn/1.691.0/assets/ig-templates-accounts/Editor/Fashion%20Blogger/07.jpg") no-repeat center center/cover;
+}
+#follow-card8 {
+    background: url("https://static.parastorage.com/services/instagram-cdn/1.691.0/assets/ig-templates-accounts/Editor/Fashion%20Blogger/08.jpg") no-repeat center center/cover;
+}
+
+.follow {
+    width: 100%;
+    overflow-x: scroll;
+    display: grid;
+    grid-template-columns: repeat(8, 13rem);
+    justify-content: space-evenly;
+    grid-gap: 2rem;
+
+    .card {
+        width: 13rem;
+        height: 13rem;;
     }
 }
