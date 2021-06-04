@@ -80,3 +80,19 @@ if(x.matches)
 //       }
 //    }
 // }, 1);
+
+let follow_state = "close"
+
+document.querySelector(".show-more button").addEventListener("click", function() {
+   if(follow_state == "close")
+   {
+      document.querySelector(".follow").style.height = "808px"
+      this.innerText = "Show less"
+      follow_state = "open"
+   }
+   else {
+      document.querySelector(".follow").style.height = "26.25rem" // 37.625rem
+      this.innerText = "Show more"
+      follow_state = "close"
+   }
+})
